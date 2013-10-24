@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[clouditk]]></title>
+  <subtitle><![CDATA[some about image processing]]></subtitle>
+  <link href="http://yoursite.com/atom.xml" rel="self"/>
+  <link href="http://yoursite.com"/>
+  <updated>2013-10-24T14:46:00.936Z</updated>
+  <id>http://yoursite.com/</id>
+  <author>
+    <name><![CDATA[beeman]]></name>
+    <email><![CDATA[summit_mail@qq.com]]></email>
+  </author>
+  <generator uri="http://zespia.tw/hexo">Hexo</generator>
+  <entry>
+    <title type="html"><![CDATA[使用hexo在Github上部署Blog]]></title>
+    <link href="http://yoursite.com/2013/10/24/hexo-guide/"/>
+    <id>http://yoursite.com/2013/10/24/hexo-guide/</id>
+    <published>2013-10-24T14:29:03.000Z</published>
+    <updated>2013-10-24T14:44:30.000Z</updated>
+    <content type="html"><![CDATA[<p>今天在<a href="http://cnodejs.org/topic/526503f99df724eb6d51f52b" target="_blank">CNode</a>上看到一个团队博客的系统Hexo，觉得耳目一新。一直想为项目<a href="https://npmjs.org/package/node-itk‎" target="_blank">node-itk</a>建立一个博客。最后，就有了现在你所看到的博客。</p>
+<p>Hexo是一个十分强大的博客系统，在网上参考了<a href="http://zipperary.com/2013/05/28/hexo-guide-1/" target="_blank">zipperary</a>写的系统教程，觉得十分好。具体如何配置就不详细讲了，请参考zipperary的介绍，感谢他对hexo在Github上部署blog的详细描述。</p>
+]]></content>
+    <category scheme="http://yoursite.com/tags/hexo/" term="hexo"/>
+    <category scheme="http://yoursite.com/tags/github/" term="github"/>
+    <category scheme="http://yoursite.com/categories/blog/" term="blog"/>
+  </entry>
+</feed>
