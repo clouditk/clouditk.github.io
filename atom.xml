@@ -4,13 +4,78 @@
   <subtitle><![CDATA[some about image processing]]></subtitle>
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   <link href="http://yoursite.com"/>
-  <updated>2013-10-24T14:48:40.374Z</updated>
+  <updated>2013-10-25T04:09:10.798Z</updated>
   <id>http://yoursite.com/</id>
   <author>
     <name><![CDATA[beeman]]></name>
     <email><![CDATA[summit_mail@qq.com]]></email>
   </author>
   <generator uri="http://zespia.tw/hexo">Hexo</generator>
+  <entry>
+    <title type="html"><![CDATA[xtk教程-01]]></title>
+    <link href="http://yoursite.com/2013/10/25/xtk-lessons-00/"/>
+    <id>http://yoursite.com/2013/10/25/xtk-lessons-00/</id>
+    <published>2013-10-25T03:18:58.000Z</published>
+    <updated>2013-10-25T04:08:15.000Z</updated>
+    <content type="html"><![CDATA[<p><a href="https://github.com/xtk/X#readme" target="_blank">XTK</a>， 全称 The X Toolkit: WebGL  for Scientific Visualization,是一开源的Web<br>可视化解决方案。遵守MIT开源标准。项目灵感来自于VTK，当前由Boston Children&#39;s Hospital 、Medical School、Boston built共同维护。</p>
+<p>有关XTK的论文可以在<a href="http://f1000.com/posters/browse/summary/1092491" target="_blank">这里</a>找到。</p>
+<a id="more"></a>
+
+<h1>XTK起步</h1>
+<p>XTK的一般目录结构为</p>
+<ul>
+<li>xxx.js  包含xtk的调用，渲染代码</li>
+<li>xxx.css 用于定义页面的样式</li>
+<li>xxx.html 网页内容，网页只是一个壳，所有渲染工作在xxx.js完成</li>
+</ul>
+<p>下面以官方的一个例子说明</p>
+<ul>
+<li>创建文件夹00</li>
+<li><p>在文件夹中新建demo.js，其内容为：</p>
+<p>  `window.onload = function() {</p>
+<pre><code>// 创建一个<span class="number">3</span>维渲染器
+var r = new <span class="built_in">X</span><span class="preprocessor">.renderer</span>3D()<span class="comment">;</span>
+r<span class="preprocessor">.init</span>()<span class="comment">;</span>
+
+// 创建一个正方体
+cube = new <span class="built_in">X</span><span class="preprocessor">.cube</span>()<span class="comment">;</span>
+
+// 设置边长，这一句可以省，因为默认就为<span class="number">20</span>长度
+cube<span class="preprocessor">.lengthX</span> = cube<span class="preprocessor">.lengthY</span> = cube<span class="preprocessor">.lengthZ</span> = <span class="number">20</span><span class="comment">;</span>
+
+// 设置正方体的中心，默认也是原点
+cube<span class="preprocessor">.center</span> = [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>]<span class="comment">;</span>
+
+// 设置正方体的颜色，默认为[<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>]==白色，这也是默认色
+cube<span class="preprocessor">.color</span> = [<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>]<span class="comment">;</span>
+
+r<span class="preprocessor">.add</span>(cube)<span class="comment">; // 把渲染对象加入渲染器</span>
+r<span class="preprocessor">.render</span>()<span class="comment">; //  执行渲染</span></code></pre>
+<p>  };`</p>
+</li>
+</ul>
+<p>如果熟悉VTK的朋友对这段类似的代码应该很容易理解。</p>
+<ul>
+<li><p>创建页面的demo.css，让页面背景色为黑色</p>
+<p>  `html, body { </p>
+<pre><code>background-color:<span class="preprocessor">#000;</span>
+<span class="label">margin:</span> <span class="number">0</span><span class="comment">;</span>
+<span class="label">padding:</span> <span class="number">0</span><span class="comment">;</span>
+<span class="label">height:</span> <span class="number">100</span>%<span class="comment">;</span>
+<span class="label">overflow:</span> hidden !important<span class="comment">;  </span></code></pre>
+<p>  }`</p>
+</li>
+<li><p>创建网页index.html, 可以看到它仅是一个壳</p>
+<p>  &lt;html&gt;&lt;meta&nbsp;style=&quot;visibility:&nbsp;hidden&nbsp;!important;&nbsp;display:&nbsp;block&nbsp;!important;&nbsp;width:&nbsp;0px&nbsp;!important;&nbsp;height:&nbsp;0px&nbsp;!important;&nbsp;border-style:&nbsp;none&nbsp;!important;&quot;&gt;&lt;/meta&gt;&lt;head&gt;<br>  &lt;title&gt;XTK&nbsp;LESSON&nbsp;00&lt;/title&gt;<br>  &lt;script&nbsp;type=&quot;text/javascript&quot;&nbsp;src=&quot;<a href="http://get.goXTK.com/xtk.js&quot;&gt;&lt;/script" target="_blank">http://get.goXTK.com/xtk.js&quot;&gt;&lt;/script</a> &gt;<br>  &lt;script&nbsp;type=&quot;text/javascript&quot;&nbsp;src=&quot;demo.js&quot;&gt;&lt;/script&gt;<br>  &lt;link&nbsp;rel=&quot;stylesheet&quot;&nbsp;type=&quot;text/css&quot;&nbsp;href=&quot;demo.css&quot;&gt;<br>  &lt;/head&gt;<br>  &lt;body&gt;<br>  &lt;canvas&nbsp;width=&quot;1366&quot;&nbsp;height=&quot;289&quot;&gt;&lt;/canvas&gt;&lt;/body&gt;&lt;/html&gt;</p>
+</li>
+<li><p>打开chrome可以查看结果如下图所示</p>
+</li>
+</ul>
+<p><img src="http://clouditk.github.io/img/xtk00.png" alt="显示结果"></p>
+]]></content>
+    <category scheme="http://yoursite.com/tags/xtk, web app/" term="xtk, web app"/>
+    <category scheme="http://yoursite.com/categories/可视化/" term="可视化"/>
+  </entry>
   <entry>
     <title type="html"><![CDATA[使用hexo在Github上部署Blog]]></title>
     <link href="http://yoursite.com/2013/10/24/hexo-guide/"/>

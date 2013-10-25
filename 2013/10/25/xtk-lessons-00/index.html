@@ -1,0 +1,228 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>xtk教程-01 | clouditk</title>
+  <meta name="author" content="beeman">
+  
+  <meta name="description" content="XTK， 全称 The X Toolkit: WebGL  for Scientific Visualization,是一开源的Web可视化解决方案。遵守MIT开源标准。项目灵感来自于VTK，当前由Boston Children&amp;#39;s Hospital 、Medical School、Boston built共同维护。
+有关XTK的论文可以在这里找到。">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="xtk教程-01"/>
+  <meta property="og:site_name" content="clouditk"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="clouditk" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">clouditk</a></h1>
+  <h2><a href="/">some about image processing</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+    <li> <a href="/atom.xml">RSS</a> </li>
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2013-10-25T03:18:58.000Z"><a href="/2013/10/25/xtk-lessons-00/">Oct 25 2013</a></time>
+      
+      
+  
+    <h1 class="title">xtk教程-01</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p><a href="https://github.com/xtk/X#readme" target="_blank">XTK</a>， 全称 The X Toolkit: WebGL  for Scientific Visualization,是一开源的Web<br>可视化解决方案。遵守MIT开源标准。项目灵感来自于VTK，当前由Boston Children&#39;s Hospital 、Medical School、Boston built共同维护。</p>
+<p>有关XTK的论文可以在<a href="http://f1000.com/posters/browse/summary/1092491" target="_blank">这里</a>找到。</p>
+<a id="more"></a>
+
+<h1>XTK起步</h1>
+<p>XTK的一般目录结构为</p>
+<ul>
+<li>xxx.js  包含xtk的调用，渲染代码</li>
+<li>xxx.css 用于定义页面的样式</li>
+<li>xxx.html 网页内容，网页只是一个壳，所有渲染工作在xxx.js完成</li>
+</ul>
+<p>下面以官方的一个例子说明</p>
+<ul>
+<li>创建文件夹00</li>
+<li><p>在文件夹中新建demo.js，其内容为：</p>
+<p>  `window.onload = function() {</p>
+<pre><code>// 创建一个<span class="number">3</span>维渲染器
+var r = new <span class="built_in">X</span><span class="preprocessor">.renderer</span>3D()<span class="comment">;</span>
+r<span class="preprocessor">.init</span>()<span class="comment">;</span>
+
+// 创建一个正方体
+cube = new <span class="built_in">X</span><span class="preprocessor">.cube</span>()<span class="comment">;</span>
+
+// 设置边长，这一句可以省，因为默认就为<span class="number">20</span>长度
+cube<span class="preprocessor">.lengthX</span> = cube<span class="preprocessor">.lengthY</span> = cube<span class="preprocessor">.lengthZ</span> = <span class="number">20</span><span class="comment">;</span>
+
+// 设置正方体的中心，默认也是原点
+cube<span class="preprocessor">.center</span> = [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>]<span class="comment">;</span>
+
+// 设置正方体的颜色，默认为[<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>]==白色，这也是默认色
+cube<span class="preprocessor">.color</span> = [<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>]<span class="comment">;</span>
+
+r<span class="preprocessor">.add</span>(cube)<span class="comment">; // 把渲染对象加入渲染器</span>
+r<span class="preprocessor">.render</span>()<span class="comment">; //  执行渲染</span></code></pre>
+<p>  };`</p>
+</li>
+</ul>
+<p>如果熟悉VTK的朋友对这段类似的代码应该很容易理解。</p>
+<ul>
+<li><p>创建页面的demo.css，让页面背景色为黑色</p>
+<p>  `html, body { </p>
+<pre><code>background-color:<span class="preprocessor">#000;</span>
+<span class="label">margin:</span> <span class="number">0</span><span class="comment">;</span>
+<span class="label">padding:</span> <span class="number">0</span><span class="comment">;</span>
+<span class="label">height:</span> <span class="number">100</span>%<span class="comment">;</span>
+<span class="label">overflow:</span> hidden !important<span class="comment">;  </span></code></pre>
+<p>  }`</p>
+</li>
+<li><p>创建网页index.html, 可以看到它仅是一个壳</p>
+<p>  &lt;html&gt;&lt;meta&nbsp;style=&quot;visibility:&nbsp;hidden&nbsp;!important;&nbsp;display:&nbsp;block&nbsp;!important;&nbsp;width:&nbsp;0px&nbsp;!important;&nbsp;height:&nbsp;0px&nbsp;!important;&nbsp;border-style:&nbsp;none&nbsp;!important;&quot;&gt;&lt;/meta&gt;&lt;head&gt;<br>  &lt;title&gt;XTK&nbsp;LESSON&nbsp;00&lt;/title&gt;<br>  &lt;script&nbsp;type=&quot;text/javascript&quot;&nbsp;src=&quot;<a href="http://get.goXTK.com/xtk.js&quot;&gt;&lt;/script" target="_blank">http://get.goXTK.com/xtk.js&quot;&gt;&lt;/script</a> &gt;<br>  &lt;script&nbsp;type=&quot;text/javascript&quot;&nbsp;src=&quot;demo.js&quot;&gt;&lt;/script&gt;<br>  &lt;link&nbsp;rel=&quot;stylesheet&quot;&nbsp;type=&quot;text/css&quot;&nbsp;href=&quot;demo.css&quot;&gt;<br>  &lt;/head&gt;<br>  &lt;body&gt;<br>  &lt;canvas&nbsp;width=&quot;1366&quot;&nbsp;height=&quot;289&quot;&gt;&lt;/canvas&gt;&lt;/body&gt;&lt;/html&gt;</p>
+</li>
+<li><p>打开chrome可以查看结果如下图所示</p>
+</li>
+</ul>
+<p><img src="http://clouditk.github.io/img/xtk00.png" alt="显示结果"></p>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/可视化/">可视化</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/xtk, web app/">xtk, web app</a>
+  </div>
+
+        <!-- Baidu Button BEGIN -->
+<div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare">
+<a class="bds_qzone"></a>
+<a class="bds_tsina"></a>
+<a class="bds_tqq"></a>
+<a class="bds_renren"></a>
+<a class="bds_t163"></a>
+<span class="bds_more"></span>
+<a class="shareCount"></a>
+</div>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6587636" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:yoursite.com">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">Categories</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/blog/">blog</a><small>1</small></li>
+  
+    <li><a href="/categories/可视化/">可视化</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">Tags</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/github/">github</a><small>1</small></li>
+  
+    <li><a href="/tags/hexo/">hexo</a><small>1</small></li>
+  
+    <li><a href="/tags/xtk, web app/">xtk, web app</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">Tag Cloud</h3>
+  <div class="entry">
+    <a href="/tags/github/" style="font-size: NaNpx;">github</a><a href="/tags/hexo/" style="font-size: NaNpx;">hexo</a><a href="/tags/xtk, web app/" style="font-size: NaNpx;">xtk, web app</a>
+  </div>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2013 beeman
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>
