@@ -4,13 +4,39 @@
   <subtitle><![CDATA[some about image processing]]></subtitle>
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   <link href="http://yoursite.com"/>
-  <updated>2013-10-25T04:09:10.798Z</updated>
+  <updated>2013-10-27T03:18:48.544Z</updated>
   <id>http://yoursite.com/</id>
   <author>
     <name><![CDATA[beeman]]></name>
     <email><![CDATA[summit_mail@qq.com]]></email>
   </author>
   <generator uri="http://zespia.tw/hexo">Hexo</generator>
+  <entry>
+    <title type="html"><![CDATA[破解Sencha Architect2.2]]></title>
+    <link href="http://yoursite.com/2013/10/27/sencha-architect-crack/"/>
+    <id>http://yoursite.com/2013/10/27/sencha-architect-crack/</id>
+    <published>2013-10-27T03:07:03.000Z</published>
+    <updated>2013-10-27T03:18:27.000Z</updated>
+    <content type="html"><![CDATA[<p>Sencha Architect 2是ExtJS和Sencha Touch的官方可视化IDE工具。通过分析对比不同的mobile js framework，得出如下结论：</p>
+<ul>
+<li>若只是wap型网页，最好使用轻量级的解决方案。按制作网页的传统方式去做，可选框架：jQuery mobile, gmu.js+zepto.js, BootStrap。<br>这种页面可以作为独立的wap站点，或者是成为Hybrid App中一个小元素</li>
+<li>若是完成的App应用，涉及复杂的UI元素，这类应用不考虑带宽要求，可选框架：Sencha Touch, The-M-Project, Titanium Mobile</li>
+</ul>
+<p>在制作Web App方面，Sencha Touch还是有着其优势。最近决定采用Sencha Touch，最新版本的Sencha Touch已经建议采用可视化IDE工具开发，<br>为快速开发Web App提供了不少方便，可是这个产品是一个商用收费产品，试用期30天。在网上找到相关破解方法。</p>
+<a id="more"></a>
+
+<h1>破解方法</h1>
+<ul>
+<li>在官方网站下载Sencha Architect最新版， <a href="http://www.sencha.com/products/architect/download/" target="_blank">下载传送门</a></li>
+<li>安装Sencha Architect</li>
+<li>在C:\Users\XXX\AppData\Local\Sencha\Sencha Architect 2，找到user.license文件。</li>
+<li>打开文件，把Expires改为Expire</li>
+</ul>
+<p>现在，Sencha Architect2.2就可以无限期使用了。</p>
+]]></content>
+    <category scheme="http://yoursite.com/tags/sencha touch, web app/" term="sencha touch, web app"/>
+    <category scheme="http://yoursite.com/categories/UI/" term="UI"/>
+  </entry>
   <entry>
     <title type="html"><![CDATA[xtk教程-01]]></title>
     <link href="http://yoursite.com/2013/10/25/xtk-lessons-00/"/>
